@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sa-frontend2
+  labels:
+    app: sa-frontend
+spec:
+  containers:
+    - image: vladlenkiev/sentiment-analysis-frontend:0.3.24
+      name: sa-frontend
+      ports:
+        - containerPort: 80

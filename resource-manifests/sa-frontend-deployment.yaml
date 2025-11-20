@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: sa-frontend-2
+  labels:
+    app: sa-frontend-2
+spec:
+  selector:
+    matchLabels:
+      app: sa-frontend-2
+  replicas: 2                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: sa-frontend-2                                  # 6
+    spec:
+      containers:
+        - image: vladlenkiev/sentiment-analysis-frontend:0.3.24
+          imagePullPolicy: Always                         # 7
+          name: sa-frontend
+          ports:
+            - containerPort: 80
