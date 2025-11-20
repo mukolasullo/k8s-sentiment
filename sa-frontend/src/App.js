@@ -50,7 +50,7 @@ class App extends Component {
             <MuiThemeProvider>
                 <div className="centerize">
                     <Paper zDepth={1} className="content">
-                        <h2>TEST Sentiment Analyser (Mankivskyi TZ-88)</h2>
+                        <h2>TEST Sentiment Analyser (Sullo  Nikola TZ-21)</h2>
                         <TextField ref={ref => this.textField = ref} onKeyUp={this.onEnterPress.bind(this)}
                                    hintText="PLS, Type your sentence."/>
                         <RaisedButton  label="Send" style={style} onClick={this.analyzeSentence.bind(this)}/>
